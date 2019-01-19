@@ -1,0 +1,48 @@
+apply plugin: 'java'
+
+dependencies {
+    implementation project(':core')
+    implementation project(':desktop_lib')
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+jar {
+    baseName 'obcanka_reader'
+    manifest {
+        attributes 'Main-Class': 'net.vyhnal.obcanka.reader.Main'
+    }
+
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
+task execute(type:JavaExec) {
+   main = 'net.vyhnal.obcanka.reader.Main'
+   classpath = sourceSets.main.runtimeClasspath
+}
+
+
+task customFatJar(type: Jar) {
+    manifest {
+        attributes 'Main-Class': 'net.vyhnal.obcanka.reader.Main'
+    }
+    baseName = 'obcanka_reader_fatjar'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+build.finalizedBy(customFatJar)
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:2.0.1'
+    }
+}
+apply plugin: 'com.github.johnrengelman.shadow'
+
+
+sourceCompatibility = "8"
+targetCompatibility = "8"
