@@ -7,11 +7,10 @@ java -jar obcanka-reader-all.jar | while read J; do
   tmp=`tempfile`
   echo $J | jq -r 'keys[] as $k | "\($k)=\"\(.[$k])\" "' > $tmp
   echo "cat <<END" >> $tmp
-  userconf=/boot/obcanka-reader-template.txt
-  if [[ -f $userconf ]] ; then 
-    cat $userconf >> $tmp
+  if [[ -f /boot/obcanka-reader-template.txt ]] ; then 
+    cat /boot/obcanka-reader-template.txt >> $tmp
   else
-    cat template >> $tmp
+    cat obcanka-reader-template.txt >> $tmp
   fi
   echo "END" >> $tmp
   bash $tmp | iconv -f utf8 -t ascii//TRANSLIT > $OUT
