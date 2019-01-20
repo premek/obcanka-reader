@@ -95,3 +95,8 @@ You can use any characters that would be typed directly (e.g. tab or spaces to s
 
 
 
+## TODO
+- 3D printed box
+- Currently only ASCII characters are typed by the emulated keyboard
+- Power both boards from the same USB
+
