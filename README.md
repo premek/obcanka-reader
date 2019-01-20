@@ -30,8 +30,10 @@ Raspberry Pi is connected to Teensy via UART / Serial line pins:
 ## Installation
 
 ### Teensy
+Install Arduino IDE and Teensyduino, see https://www.pjrc.com/teensy/teensyduino.html and upload the `teensy/serial-to-keyboard/serial-to-keyboard.ino` sketch into your Teensy.
 
 ### Raspberry Pi
+- download and install Raspbian image (Lite version is enough), configure user/ssh access etc
 - disable serial console using raspi-config
 - sudo aptitude install openjdk-8-jre-headless pcscd jq
 - copy the following files to /home/pi on Raspberry Pi
@@ -40,8 +42,7 @@ Raspberry Pi is connected to Teensy via UART / Serial line pins:
   - obcanka-reader-template.txt
   - obcanka-reader.service
 
-
-### auto-start
+#### auto-start
 - sudo mv obcanka-reader.service /lib/systemd/system/
 - sudo chmod 644 /lib/systemd/system/obcanka-reader.service
 - sudo systemctl daemon-reload
