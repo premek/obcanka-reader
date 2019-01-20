@@ -59,12 +59,12 @@ Edit (or create) the file named `obcanka-reader-template.txt` in the `/boot` par
 
 Example:
 ```
-$givenName	$surname
+$givenName  →  $surname↵
 ```
 
 ![hw connection](resources/config.png)
 
-You can use any characters that would be typed directly or the following variables that are read from the ID card.
+You can use any characters that would be typed directly (e.g. tab or spaces to separate fields) or the following variables that are read from the ID card.
 
 - $serialNumber
 - $cardID
