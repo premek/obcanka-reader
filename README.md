@@ -22,6 +22,7 @@ Teensy emulates the keyboard and is connected to the user PC via micro USB.
 Raspberry Pi is connected to Teensy via UART / Serial line pins: 
  - Teensy pin 0 (RX1) to Raspberry GPIO pin 8 (UART0 TX)
  - Teensy pin 1 (TX1) to Raspberry GPIO pin 10 (UART0 RX)
+ 
 Raspberry GPIO and Teensy's Serial are both on the same voltage so no level conversion is needed.  
 
 Raspberry uses USB only for power.
