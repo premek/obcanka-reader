@@ -1,0 +1,11 @@
+[Unit]
+Description=Obcanka Reader
+After=multi-user.target
+
+[Service]
+Type=idle
+ExecStart=/usr/bin/env bash /home/pi/obcanka-reader-run.sh
+
+[Install]
+WantedBy=multi-user.target
+
