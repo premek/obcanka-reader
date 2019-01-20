@@ -1,7 +1,6 @@
 # obcanka-reader
 
-A simple java app that runs on raspberry pi and uses https://github.com/ParalelniPolis/obcanka-public to read Czech ID smartcards
-
+A simple java app that runs on raspberry pi and uses https://github.com/ParalelniPolis/obcanka-public to read Czech ID smartcards. It outputs JSON formatted data from the card which are then parsed and sent to a PC as keystrokes using Teensy USB board.
 
 ## Build
 - `git clone git@github.com:ParalelniPolis/obcanka-public.git`
