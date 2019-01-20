@@ -51,3 +51,43 @@ Install Arduino IDE and Teensyduino, see https://www.pjrc.com/teensy/teensyduino
 - `sudo systemctl daemon-reload`
 - `sudo systemctl enable obcanka-reader.service`
 - reboot
+
+## Configuration
+Emulated keyboard's output can be configured by editinag a file on Raspberry's SD card. This can be done on raspberry Pi directly or by using a SD card reader on your computer.
+ 
+Edit (or create) the file named `obcanka-reader-template.txt` in the `/boot` partition.
+
+Example:
+```
+$givenName	$surname
+```
+
+![hw connection](resources/config.png)
+
+You can use any characters that would be typed directly or the following variables that are read from the ID card.
+
+- $serialNumber
+- $cardID
+- $documentNumber
+- $givenName
+- $surname
+- $marriageStatus
+- $sex
+- $street
+- $city
+- $locality
+- $countryName
+- $countryCode
+- $birthNumber
+- $birthDate
+- $birthCity
+- $organization
+- $dokState
+- $dokTryLimit
+- $dokMaxTryLimit
+- $iokState
+- $iokMaxTryLimit
+- $iokTryLimit
+
+
+
