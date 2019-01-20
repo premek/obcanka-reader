@@ -16,10 +16,7 @@
 package net.vyhnal.obcanka.reader;
 
 import com.google.gson.Gson;
-import cz.paralelnipolis.obcanka.core.HexUtils;
 import cz.paralelnipolis.obcanka.core.card.Card;
-import cz.paralelnipolis.obcanka.core.certificates.Certificate;
-import cz.paralelnipolis.obcanka.core.communication.CardException;
 import cz.paralelnipolis.obcanka.desktop.lib.DesktopCardInterface;
 
 import javax.smartcardio.CardTerminal;
